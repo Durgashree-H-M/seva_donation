@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support Annadana Seva | Sri Vyasatirtha Vidyapeeta</title>
+    <meta name="description" content="Support Vedic education and daily meals for students at Sri Vyasatirtha Vidyapeeta. Contribute to Annadana Seva and make a difference in students' lives.">
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        input.donation {
+    height: 41px;
+    width: 24px;
+}
+    </style>
+ 
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-10 mx-auto text-center">
+                        <h1 class="hero-title">Support Annadana & Vidyapeeta Students</h1>
+                        <p class="hero-subtitle">Your contribution directly supports meals, education, and daily expenses for students dedicated to Vedic learning.</p>
+                        <button class="btn btn-cta" onclick="scrollToSevaSection()">
+                            <i class="bi bi-heart-fill"></i>
+                            Choose a Seva to Support
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seva Selection Section -->
+    <section class="seva-section" id="seva-selection">
+        <div class="container">
+            <!-- Section Header -->
+            <div class="row mb-5">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h2 class="section-title">Select Your Seva Contribution</h2>
+                    <p class="section-subtitle">Every contribution makes a meaningful difference</p>
+                </div>
+            </div>
+
+            <!-- Tabs -->
+            <div class="row mb-5">
+                <div class="col-12">
+                    <ul class="nav nav-pills seva-tabs justify-content-center" id="sevaTabs" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link active" id="one-time-tab" data-bs-toggle="pill" data-bs-target="#one-time" type="button" role="tab" aria-controls="one-time" aria-selected="true">
+                                One-Time Seva
+                            </button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="multiple-tab" data-bs-toggle="pill" data-bs-target="#multiple" type="button" role="tab" aria-controls="multiple" aria-selected="false">
+                                Multiple Sevas
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Tab Content -->
+            <div class="tab-content" id="sevaTabContent">
+                <!-- One-Time Seva Tab -->
+                <div class="tab-pane fade show active" id="one-time" role="tabpanel" aria-labelledby="one-time-tab">
+                    <div class="row g-4">
+                        <!-- Donation Card 1 -->
+                        <div class="col-md-6 col-lg-4">
+                            <div class="donation-card">
+                                <div class="card-body">
+                                    <h3 class="card-title">Daily Expense Per Student</h3>
+                                    <!-- <span style="float: right;"><input type="checkbox" class="donation" data-amount="300"></span> -->
+                                    <input type="hidden" class="form-control card_single" value="300">
+                                    <input type="hidden" class="form-control card_desc" value="Daily Expense Per Student">
+                                    <div class="card-amount">₹300</div>
+                                    <p class="card-description">Covers daily expenses for 1 student</p>
+                                    <button class="btn btn-donate" onclick="handleDonation('Daily Expense Per Student', 300)">Donate Now</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Donation Card 2 -->
+                        <div class="col-md-6 col-lg-4">
+                            <div class="donation-card">
+                                <div class="card-body">
+                                    <h3 class="card-title">Annadana for 1 Day</h3>
+                                    <!-- <span style="float: right;"><input type="checkbox" class="donation" data-amount="600"></span> -->
+                                         <input type="hidden" class="form-control card_single"  value="600">
+                                         <input type="hidden" class="form-control card_desc" value="Annadana for 1 Day">
+
+                                    <div class="card-amount">₹600</div>
+                                    <p class="card-description">Feeds all students for 1 day</p>
+                                    <button class="btn btn-donate" >Donate Now</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Donation Card 3 -->
+                        <div class="col-md-6 col-lg-4">
+                            <div class="donation-card">
+                                <div class="card-body">
+                                    <h3 class="card-title">Annadana for 1 Week</h3>
+                                    <!-- <span style="float: right;"><input type="checkbox" class="donation" data-amount="4200"></span> -->
+                                    <input type="hidden" class="form-control card_single" value="4200">
+                                    <input type="hidden" class="form-control card_desc" value="Annadana for 1 Week">
+                                    <div class="card-amount">₹4,200</div>
+                                    <p class="card-description">Feeds all students for 1 week</p>
+                                    <button class="btn btn-donate" onclick="handleDonation('Annadana for 1 Week', 4200)">Donate Now</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Donation Card 4 -->
+                        <div class="col-md-6 col-lg-4">
+                            <div class="donation-card">
+                                <div class="card-body">
+                                    <h3 class="card-title">Annadana for 1 Month</h3>
+                                    <!-- <span style="float: right;"><input type="checkbox" class="donation" data-amount="18000"></span> -->
+                                    <input type="hidden" class="form-control card_single" value="18000">
+                                    <input type="hidden" class="form-control card_desc" value="Annadana for 1 Month">
+
+                                    <div class="card-amount">₹18,000</div>
+                                    <p class="card-description">Feeds all students for 1 month</p>
+                                    <button class="btn btn-donate" onclick="handleDonation('Annadana for 1 Month', 18000)">Donate Now</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Donation Card 5 -->
+                        <div class="col-md-6 col-lg-4">
+                            <div class="donation-card">
+                                <div class="card-body">
+                                    <h3 class="card-title">Vidyarthi Poshan (1 Month)</h3>
+                                    <!-- <span style="float: right;"><input type="checkbox" class="donation" data-amount="9000"></span> -->
+                                    <input type="hidden" class="form-control card_single" value="9000">
+                                    <input type="hidden" class="form-control card_desc" value="Vidyarthi Poshan (1 Month)">
+
+                                    <div class="card-amount">₹9,000</div>
+                                    <p class="card-description">Supports 1 student for 1 month</p>
+                                    <button class="btn btn-donate" onclick="handleDonation('Vidyarthi Poshan (1 Month)', 9000)">Donate Now</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Donation Card 6 -->
+                        <div class="col-md-6 col-lg-4">
+                            <div class="donation-card">
+                                <div class="card-body">
+                                    <h3 class="card-title">Vidyarthi Poshan (1 Year)</h3>
+                                    <!-- <span style="float: right;"><input type="checkbox" class="donation" data-amount="108000"></span> -->
+                                    <input type="hidden" class="form-control card_single" value="108000">
+                                    <input type="hidden" class="form-control card_desc" value="Vidyarthi Poshan (1 Year)">
+
+                                    <div class="card-amount">₹1,08,000</div>
+                                    <p class="card-description">Supports 1 student for 1 year</p>
+                                    <button class="btn btn-donate" onclick="handleDonation('Vidyarthi Poshan (1 Year)', 108000)">Donate Now</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Open Donation Card -->
+                        <div class="col-md-6 col-lg-4">
+                            <div class="donation-card open-donation">
+                                <div class="card-body">
+                                    <h3 class="card-title">Open Donation</h3>
+                                    <p class="card-description mb-3">Enter any amount you wish to contribute</p>
+                                    <div class="mb-3">
+                                        <label for="customAmount" class="form-label">Amount (₹)</label>
+                                        <input type="number" class="form-control" id="single_amt"  placeholder="Enter amount" min="1">
+                                        <input type="text" class="form-control" id="single_desc"  value="custom donation">
+
+                                    </div>
+                                    <button class="btn btn-donate" type="button" id="singlebtn">Donate Now</button>
+                                </div>
+                            </div>
+                        </div>
+
+                       
+                    </div>
+                </div>
+
+                <!-- Multiple Sevas Tab -->
+                <div class="tab-pane fade" id="multiple" role="tabpanel" aria-labelledby="multiple-tab">
+                    <div class="row g-4">
+                        <!-- Donation Card 1 -->
+                        <div class="col-md-6 col-lg-4">
+                            <div class="donation-card">
+                                <div class="card-body">
+                                    <h3 class="card-title">Daily Expense Per Student</h3>
+                                    <span style="float: right;"><input type="checkbox" class="donation" data-amount="300" data-desc="Daily Expense Per Student"></span>
+
+                                    <div class="card-amount">₹300</div>
+                                    <p class="card-description">Covers daily expenses for 1 student</p>
+                                    <!-- <button class="btn btn-donate" onclick="handleDonation('Daily Expense Per Student', 300, true)">Add to Cart</button> -->
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Donation Card 2 -->
+                        <div class="col-md-6 col-lg-4">
+                            <div class="donation-card">
+                                <div class="card-body">
+                                    <h3 class="card-title">Annadana for 1 Day</h3>
+                                    <span style="float: right;"><input type="checkbox" class="donation" data-amount="600" data-desc="Annadana for 1 Day"></span>
+
+                                    <div class="card-amount">₹600</div>
+                                    <p class="card-description">Feeds all students for 1 day</p>
+                                    <!-- <button class="btn btn-donate" onclick="handleDonation('Annadana for 1 Day', 600, true)">Add to Cart</button> -->
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Donation Card 3 -->
+                        <div class="col-md-6 col-lg-4">
+                            <div class="donation-card">
+                                <div class="card-body">
+                                    <h3 class="card-title">Annadana for 1 Week</h3>
+                                    <span style="float: right;"><input type="checkbox" class="donation" data-amount="4200" data-desc="Annadana for 1 Week"></span>
+
+                                    <div class="card-amount">₹4,200</div>
+                                    <p class="card-description">Feeds all students for 1 week</p>
+                                    <!-- <button class="btn btn-donate" onclick="handleDonation('Annadana for 1 Week', 4200, true)">Add to Cart</button> -->
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Donation Card 4 -->
+                        <div class="col-md-6 col-lg-4">
+                            <div class="donation-card">
+                                <div class="card-body">
+                                    <h3 class="card-title">Annadana for 1 Month</h3>
+                                    <span style="float: right;"><input type="checkbox" class="donation" data-amount="18000" data-desc="Annadana for 1 Month"></span>
+
+                                    <div class="card-amount">₹18,000</div>
+                                    <p class="card-description">Feeds all students for 1 month</p>
+                                    <!-- <button class="btn btn-donate" onclick="handleDonation('Annadana for 1 Month', 18000, true)">Add to Cart</button> -->
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Donation Card 5 -->
+                        <div class="col-md-6 col-lg-4">
+                            <div class="donation-card">
+                                <div class="card-body">
+                                    <h3 class="card-title">Vidyarthi Poshan (1 Month)</h3>
+                                    <span style="float: right;"><input type="checkbox" class="donation" data-amount="9000" data-desc="Vidyarthi Poshan (1 Month)"></span>
+
+                                    <div class="card-amount">₹9,000</div>
+                                    <p class="card-description">Supports 1 student for 1 month</p>
+                                    <!-- <button class="btn btn-donate" onclick="handleDonation('Vidyarthi Poshan (1 Month)', 9000, true)">Add to Cart</button> -->
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Donation Card 6 -->
+                        <div class="col-md-6 col-lg-4">
+                            <div class="donation-card">
+                                <div class="card-body">
+                                    <h3 class="card-title">Vidyarthi Poshan (1 Year)</h3>
+                                    <span style="float: right;"><input type="checkbox" class="donation" data-amount="108000" data-desc="Vidyarthi Poshan (1 Year)"></span>
+
+                                    <div class="card-amount">₹1,08,000</div>
+                                    <p class="card-description">Supports 1 student for 1 year</p>
+                                    <!-- <button class="btn btn-donate" onclick="handleDonation('Vidyarthi Poshan (1 Year)', 108000, true)">Add to Cart</button> -->
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Open Donation Card -->
+                        <div class="col-md-6 col-lg-4">
+                            <div class="donation-card open-donation">
+                                <div class="card-body">
+                                    <h3 class="card-title">Open Donation</h3>
+                                    <p class="card-description mb-3">Enter any amount you wish to contribute</p>
+                                    <div class="mb-3">
+                                        <label for="customAmountMultiple" class="form-label">Amount (₹)</label>
+                                        <input type="number" class="form-control" id="donationAmount" placeholder="Enter amount" min="1">
+                                        <input type="text" class="form-control" id="donationDesc" placeholder="Enter amount" value="custom donation">
+
+
+                                    </div>
+                                    <button class="btn btn-donate" id="chkbtn" >Checkout</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-lg-4">
+                            <h2>Total Amount: ₹<span id="total">0</span></h2>
+                            <button class="btn btn-donate" id="checkoutBtn" >proceed to checkout</button>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Toast Container -->
+    <div class="toast-container position-fixed bottom-0 end-0 p-3">
+        <div id="donationToast" class="toast align-items-center" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="d-flex">
+                <div class="toast-body">
+                    <div class="toast-icon">
+                        <i class="bi bi-check-circle-fill"></i>
+                    </div>
+                    <div class="toast-content">
+                        <div class="toast-title" id="toastTitle"></div>
+                        <div class="toast-description" id="toastDescription"></div>
+                    </div>
+                </div>
+                <button type="button" class="btn-close me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap 5 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Custom JS -->
+    <script src="js/script.js"></script>
+
+    <script>
+        const checkboxes = document.querySelectorAll('.donation');
+        const totalBox = document.getElementById('total');
+        const checkoutBtn = document.getElementById('checkoutBtn');
+        const amountInput = document.getElementById("donationAmount");
+        const descInput = document.getElementById("donationDesc");
+        const customBtn = document.getElementById("chkbtn");
+        const signBtn = document.getElementById("singlebtn");
+        const amount_single= document.getElementById("single_amt");
+        const desc_single = document.getElementById("single_desc");
+
+        
+        let selectedItems = [];
+        let total = 0;
+        
+        // --- CARD SELECTION LOGIC ---
+        checkboxes.forEach(cb => {
+          cb.addEventListener('change', () => {
+            total = 0;
+            selectedItems = [];
+        
+            checkboxes.forEach(item => {
+              if (item.checked) {
+                selectedItems.push({
+                  desc: item.dataset.desc,
+                  amount: item.dataset.amount
+                });
+                total += parseInt(item.dataset.amount);
+              }
+            });
+        
+            totalBox.textContent = total;
+          });
+        });
+        
+        // --- CHECKOUT BUTTON FOR CARDS ---
+        checkoutBtn.addEventListener('click', () => {
+          if (total === 0) {
+            alert("Please select at least one donation amount!");
+            return;
+          }
+        
+          // Clear any previous input donation
+          localStorage.removeItem("checkoutItem");
+        
+          // Save selected cards
+          localStorage.setItem("checkoutItems", JSON.stringify(selectedItems));
+          localStorage.setItem("checkoutTotal", total);
+        
+          window.location.href = "checkout.html";
+        });
+        
+        // --- CUSTOM INPUT DONATION ---
+        customBtn.addEventListener("click", () => {
+          const amount = amountInput.value.trim();
+          const description = descInput.value.trim();
+
+         
+        
+          if (!amount || !description) {
+            alert("Please enter both amount and description!");
+            return;
+          }
+        
+          // Clear any previous card selections
+          localStorage.removeItem("checkoutItems");
+          localStorage.removeItem("checkoutTotal");
+        
+          // Save custom donation
+          const item = {
+            amt: amount,
+            desp: description
+          };
+          localStorage.setItem("checkoutItem", JSON.stringify(item));
+        
+          window.location.href = "checkout.html";
+        });
+
+
+        signBtn.addEventListener("click", (e) => {
+    e.preventDefault(); // prevents form reload if inside form
+
+    const amount1 = amount_single.value.trim();
+    const description1 = desc_single.value.trim();
+
+    console.log("Amount entered:", amount1);
+    console.log("Description entered:", description1);
+
+    if (!amount1 || !description1) {
+        alert("Please enter both amount and description!");
+        return;
+    }
+
+    localStorage.removeItem("checkoutItems");
+    localStorage.removeItem("checkoutTotal");
+
+    const item = {
+        amt: amount1,
+        desp: description1
+    };
+    localStorage.setItem("checkoutItem", JSON.stringify(item));
+
+    console.log("Going to checkout page");
+    window.location.href = "checkout.html";
+});
+
+ // Select all Donate Now buttons
+const donateBtns = document.querySelectorAll(".btn-donate");
+
+donateBtns.forEach(btn => {
+  btn.addEventListener("click", () => {
+    // Find the parent card
+    const card = btn.closest(".donation-card");
+
+    // Get amount and description from hidden inputs
+    const amount = card.querySelector(".card_single").value;
+    const desc = card.querySelector(".card_desc").value;
+
+    if (!amount || !desc) {
+      alert("Card data missing!");
+      return;
+    }
+
+    // Save in localStorage as a single donation
+    localStorage.removeItem("checkoutItems");
+    localStorage.removeItem("checkoutTotal");
+    localStorage.removeItem("checkoutItem");
+
+    const item = { amt: amount, desp: desc };
+    localStorage.setItem("checkoutItem", JSON.stringify(item));
+
+    // Navigate to checkout page
+    window.location.href = "checkout.html";
+  });
+});
+        
+        </script>
+        
+        
+</body>
+</html>

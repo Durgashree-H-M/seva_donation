@@ -1,0 +1,288 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: #f9fafb;
+}
+
+/* Header */
+.checkout-header {
+    background-color: white;
+    border-bottom: 1px solid #e5e7eb;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+}
+
+.header-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #111827;
+}
+
+.checkout-header .btn-link {
+    color: #6b7280;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.checkout-header .btn-link:hover {
+    color: #7f1d1d;
+}
+
+/* Main Content */
+.checkout-main {
+    min-height: calc(100vh - 80px);
+}
+
+/* Checkout Sections */
+.checkout-section {
+    background-color: white;
+    border-radius: 0.5rem;
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+}
+
+.section-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #111827;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.section-title i {
+    color: #7f1d1d;
+    font-size: 1.5rem;
+}
+
+/* Form Elements */
+.form-label {
+    font-weight: 500;
+    color: #374151;
+    margin-bottom: 0.5rem;
+}
+
+.form-control,
+.form-select {
+    border: 1px solid #d1d5db;
+    border-radius: 0.375rem;
+    padding: 0.625rem 1rem;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.form-control:focus,
+.form-select:focus {
+    border-color: #7f1d1d;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(127, 29, 29, 0.1);
+}
+
+.text-danger {
+    color: #dc2626 !important;
+}
+
+/* Payment Methods */
+.payment-methods {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+
+.payment-option {
+    width: 100%;
+}
+
+.btn-payment {
+    width: 100%;
+    border: 2px solid #e5e7eb;
+    background-color: white;
+    color: #374151;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+    border-radius: 0.5rem;
+}
+
+.btn-payment i {
+    font-size: 1.5rem;
+}
+
+.btn-payment:hover {
+    border-color: #7f1d1d;
+    background-color: #fef2f2;
+    color: #7f1d1d;
+}
+
+.btn-check:checked + .btn-payment {
+    border-color: #7f1d1d;
+    background-color: #7f1d1d;
+    color: white;
+}
+
+/* Payment Details */
+.payment-details {
+    padding: 1rem;
+    background-color: #f9fafb;
+    border-radius: 0.5rem;
+}
+
+
+
+/* Order Summary */
+.order-summary {
+    background-color: white;
+    border-radius: 0.5rem;
+    padding: 2rem;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 2rem;
+}
+
+.summary-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #111827;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.summary-title i {
+    color: #7f1d1d;
+    font-size: 1.5rem;
+}
+
+/* Order Items */
+.order-items {
+    border-bottom: 1px solid #e5e7eb;
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+}
+
+.order-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    padding: 1rem 0;
+    border-bottom: 1px solid #f3f4f6;
+}
+
+.order-item:last-child {
+    border-bottom: none;
+}
+
+.item-info h4 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #111827;
+    margin-bottom: 0.25rem;
+}
+
+.item-info p {
+    font-size: 0.875rem;
+    color: #6b7280;
+    margin: 0;
+}
+
+.item-price {
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: #7f1d1d;
+}
+
+
+
+
+
+
+
+
+/* Complete Donation Button */
+.btn-complete-donation {
+    width: 100%;
+    background-color: #7f1d1d;
+    color: white;
+    font-weight: 600;
+    font-size: 1.125rem;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    border: none;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.btn-complete-donation:hover {
+    background-color: #991b1b;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+/* Security Badge */
+.security-badge {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    color: #6b7280;
+    font-size: 0.875rem;
+}
+
+.security-badge i {
+    color: #059669;
+}
+
+
+
+
+/* Responsive Design */
+@media (max-width: 991px) {
+    .order-summary {
+        position: relative;
+        top: 0;
+        margin-top: 2rem;
+    }
+}
+
+@media (max-width: 767px) {
+    .checkout-section {
+        padding: 1.5rem;
+    }
+
+    .order-summary {
+        padding: 1.5rem;
+    }
+
+    .payment-methods {
+        grid-template-columns: 1fr;
+    }
+
+    .header-title {
+        font-size: 1.25rem;
+    }
+
+    .checkout-header .btn-link {
+        font-size: 0.875rem;
+    }
+}
